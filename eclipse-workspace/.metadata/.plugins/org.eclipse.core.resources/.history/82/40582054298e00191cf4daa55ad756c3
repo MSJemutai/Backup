@@ -1,0 +1,33 @@
+package emailApp;
+
+public class Email {
+	private String firstName;
+	private String lastName;
+	private String department;
+	private String company;
+	private int mailboxCapacity;
+	private String password;
+	private String alternateEmail;
+	
+	//if I have to create an instance of object email I need following 4 details
+	public Email(String firstName, String lastName, String department,String company) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.department = department;
+		this.company = "S&SKenya";
+		
+	}
+	//generate random string for password
+	public String password() {
+		
+		return password;
+		
+	}
+	@Override
+	public String toString() {
+		return "Your new Email is " + firstName + "." + lastName + "." + department + "."
+				+ company ;
+	}
+	
+
+}

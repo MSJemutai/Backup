@@ -1,0 +1,36 @@
+Big-O notation: gives upper bound of the complexity in the worst case as input becomes arbitrarily large
+constant time O(1), logarithmic time O(logn)-divide-binary search, linear time O(n)-add/subtract linearithmic O(nlogn),quadric time O(n^2)-mult, 
+cubic,exponential O(b^n), b>1,factorial O(n!)-travelling salesman problem- combinatorial complexity
+
+E.g i=0, while i<n, i=i+1 f(n) = n; same thing but i= i+3, f(n)=n/3 thus will finish 3x faster than the first one, except that both are O(n)
+E.g for(i=0;i<n;i=i+1)for(j=i;j<n;j=j+1)...O(n*(n+1)/2) = O(n^2)
+E.g i=0 while(i<n) j=0 while j<3n j=j+1 whilej<2n j=j+1, i=i+1 ...n*(3n+2n) =O(n^2) since the 2nd 2 loops are independent of each other sum them, but depend
+on the first hence sum multiplied by the n from first while loop
+
+Classic examples: find all subsets of a set- 0(2^n)            iterate over all the cellls in a matrix of size n by m - O(nm)
+		  find all permutations of a string - O(n!)
+                  sort using mergesort  - O(nlogn)
+algorithm: set of precise instructions to solve a problem; how fast- time complexity , and how much memory will it require-space complexity
+complexity is the number of operations
+
+          
+
+
+
+
+
+
+  
+
+ADT - how to move sth from A to B, vehicle.  Data structure is the mode with which we'll move it, golf cart, smart car
+ADTs: 
+List- dynamic array
+    - linked list
+
+Queue - Linked list based queue
+      - array based queue
+      - stack based queue
+
+Map - tree map
+    - hash map/hash table
+    - 

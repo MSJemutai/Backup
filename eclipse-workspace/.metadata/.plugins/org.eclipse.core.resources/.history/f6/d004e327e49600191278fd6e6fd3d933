@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.ArrayBlockingQueue;
+
+public class Task1 {
+	
+	public void enroll() {
+
+		
+
+	}
+
+	public static void main(String[] args) {
+	
+		System.out.println("Enter course to enroll('Done' to quit)");
+		System.out.println("Courses offered are: Hist 101, MTH 101, Eng 101, CHM 101, and CSC 101");
+		Scanner in = new Scanner(System.in);
+		List<String> courses = new ArrayList<String>();
+		
+		//String[] courses = new String[0];
+		
+		int costs=0;
+		for(int i=0;i<courses.size();i++) {
+			while(!in.next().equals("Done"));
+			courses.add(in.next());
+			costs+=600;
+		}
+
+		in.close();
+		System.out.println( costs);
+}
+}

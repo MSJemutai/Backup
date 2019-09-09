@@ -1,0 +1,499 @@
+#bigdiv{
+	position : fixed;
+	padding-left : 15px;
+	top : 0px;
+	width : 100%;
+	z-index : 10;	
+	color : #222;
+}
+.onoff{
+	z-index : 13;
+	width : 115px;
+	height : 17px;
+	position : fixed;
+	top : 0px;
+	right : 0px;
+	padding-top : 3px;
+	background-color : #009900;
+	cursor : pointer;
+	color : #F0F0F0;
+	font-weight : bold;
+}
+	.onoff:hover{
+		background-color : #00cc00;
+	}
+.calendarthing{
+	color : white;
+	width : 120px;
+	height : 25px;
+	background-color : #4889ef;
+	cursor : pointer;
+	box-shadow: 0px 1px 1px rgba(100,100,100,.4);
+  -moz-box-shadow: 0px 1px 1px rgba(100,100,100,.4);
+  -webkit-box-shadow: 0px 1px 1px rgba(100,100,100,.4);
+	padding-top : 5px;
+	font-weight : bold;
+	margin-left : auto;
+	margin-right : auto;
+}
+	.calendarthing:hover{
+		background-color : #4488e0;
+	}
+.bookmarkthing{
+	color : white;
+	width : 120px;
+	height : 25px;
+	background-color : #324bb5;
+	cursor : pointer;
+	box-shadow: 0px 1px 1px #999;
+  -moz-box-shadow: 0px 1px 1px #999;
+  -webkit-box-shadow: 0px 1px 1px #999;
+	padding-top : 5px;
+	font-weight : bold;
+	margin-left : auto;
+	margin-right : auto;
+}
+	.bookmarkthing:hover{
+		background-color : #475dbd;
+		box-shadow: 0px 1px 3px #999;
+		-moz-box-shadow: 0px 1px 3px #999;
+		-webkit-box-shadow: 0px 1px 3px #999;
+	}
+#courselist{
+	background-color : #ececec;
+	position : fixed;
+	top : 20px;
+	right : 0px;
+	width : 115px;
+	z-index : 25;
+	padding-top : 3px;
+	color : #222;
+}
+	.courseholder{
+		padding : 0px;
+		text-align : left;
+		margin-left : 2px;
+		margin-right : 2px;
+	}
+  .eventdiv{
+		float : right;
+		padding : 3px;
+		display : inline;
+		border : 1px solid black;
+		padding : 1px;
+		padding-left : 2px;
+		padding-right : 2px;
+		margin : -2px 0px 3px 6px;
+		border-radius : 3px;
+		box-shadow : 0px 1px 2px #999;
+		-moz-box-shadow : 0px 1px 2px #999;
+		-webkit-box-shadow : 0px 1px 2px #999;
+		cursor : pointer;
+		background-color : #f93a39;
+		color : white;
+		font-weight : bold;
+  }
+    .eventdiv:hover{
+			box-shadow : 0px 1px 1px #999;
+			-moz-box-shadow : 0px 1px 1px #999;
+			-webkit-box-shadow : 0px 1px 1px #999;
+		}
+    .deletediv{
+      background-color : #f93a39;
+    }
+    .movediv{
+      background-color : #4889ef;
+    }
+  #mycourses{
+    padding-right : 0px;
+  }
+	.classopt{
+		padding-left : 2px;
+		display: list-item;
+		list-style-type : none;
+		margin-bottom : 5px; /*11px;*/
+    /* testing below */
+    height : 15px;
+    padding-top : 4px;
+    padding-bottom : 3px;
+    padding-right : 2px;
+	}
+    .classopt > span{
+      cursor : pointer;
+    }
+    .classopt > div{
+      cursor : pointer;
+    }
+    .classopt:hover{
+      background-color : #FCFCFC;
+    }
+	#creditcount{
+		width : 100%;
+		height : 20px;
+		padding-bottom : 5px;
+		font-weight : bold;
+	}
+    #creditcount:hover{
+      cursor : pointer;
+    }
+  .cstatus{
+    font-weight : normal;
+  }
+    .cstatus.under{
+      background-color : #ffff66;
+    }
+    .cstatus.good{
+      background-color : #99ff00;
+    }
+    .cstatus.over{
+      background-color : #ff3300;
+    }
+  .cstatus:hover{
+    cursor : pointer;
+  }
+	#clearcourses{
+		background-color : #00CD00;
+		height : 20px;
+		padding : 8px;
+		padding-top : 4px;
+		cursor : pointer;
+		box-shadow: 0px 1px 3px #999;
+    -moz-box-shadow: 0px 1px 3px #999;
+    -webkit-box-shadow: 0px 1px 3px #999;
+		color : #F0F0F0;
+		font-weight : bold;
+	}
+		#clearcourses:hover{
+			background-color : #00DF00;
+		}
+  #sndiv{
+    width : 100%;
+		height : 28px;
+		border : 1px soild black;
+		font-weight : bold;
+		cursor : pointer;
+    color : white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+  }
+    #sndiv img{
+      width : 20px;
+    }
+.thenewdiv, .thenewdivpart{
+	width : 100%;
+	height : 15px;
+	cursor : pointer;
+	padding : 4px;
+	border-top-left-radius : 10px;
+	border-bottom-left-radius : 10px;
+	font-weight : bold;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+  border : 1px solid transparent;
+}
+  .thenewdiv:hover, .thenewdivpart:hover{
+    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    border : 1px solid rgba(0,0,0,.3);
+  }
+.thenewdivpart{
+	border-top-right-radius : 10px;
+	border-bottom-right-radius : 10px;
+  border-top-left-radius : 0px;
+  border-bottom-left-radius : 0px;
+  border-left : 1px solid black;
+}
+  .thenewdivpart:hover{
+    border-left : 1px solid black;
+  } 
+	.add{
+    text-shadow: 0 1px 1px rgba(255,255,255, .4);
+		background-color : #f6f440;
+	}
+    .add:hover{
+      background-image : -webkit-gradient(linear,left top, left bottom,from(#f2f040),to(#f0ee33));
+      background-image: -moz-linear-gradient(top, #f2f040, #f0ee33);
+    }
+	.remove{
+    color : white;
+		background-color : #3c9200;/*38d747;*/
+	}
+    .remove:hover{
+      background-image : -webkit-gradient(linear,left top, left bottom,from(#3d9400),to(#368200));
+      background-image: -moz-linear-gradient(top, #3d9400, #368200);
+    }
+  .conflict{
+		color : white;
+		background-color : #d94a39;
+	}
+    .conflict:hover{
+      color : white;
+      background-image : -webkit-gradient(linear,left top,left bottom,from(#dd4b39),to(#c53727));
+      background-image: -moz-linear-gradient(top, #dd4b39, #c53727);
+    }
+	.move{
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .4);
+		background-color : #f6f440;/*#4889ef;*/
+	}
+    .move:hover{
+      background-image : -webkit-gradient(linear,left top, left bottom,from(#f2f040),to(#f0ee33));
+      background-image: -moz-linear-gradient(top, #f2f040, #f0ee33);
+    }
+.overarching{
+	width : 100%;
+	height : 100%;
+	background-color : #000000;
+	opacity : .7;
+	position : fixed;
+	z-index : 5;
+	top : 0px;
+	left : 0px;
+}
+	#caldiv{
+    color : #222;
+		height : 90%;
+		overflow : auto;
+		background-color : #FFFFFF;
+		position : fixed;
+		top : 60px;
+		right : 50%; /*set back to 150px if not middle*/
+		z-index : 6;
+		text-align : left;
+		width : 85%;
+	}
+  #togglebutton{
+    color : white;
+    width : 125px;
+    height : 15px;
+    padding-top : 4px;
+    border-radius : 6px;
+    padding-left : 3px;
+    padding-right : 3px;
+    text-align : center;
+    background-color : #EE0000;
+    font-weight : bold;
+    position : fixed;
+    left : 50%;
+    margin-left : -53px;
+    z-index : 15;
+    top : 35px;
+    box-shadow: 0px 1px 2px (0,0,0,.5);
+    border : 1px solid black;
+    text-shadow : 0px 1px 1px (0,0,0,.4);
+    opacity : .95;
+  }
+    #togglebutton:hover{
+      cursor : pointer;
+      background-color : #FF0000;
+    }
+	#opdiv{
+		color : white;
+		width : 140px;
+		border-top : 1px solid black;
+		border-bottom : 1px solid black;
+		border-right : 1px solid black;
+		padding-bottom : 15px;
+		font-weight : bold;
+		position : fixed;
+		top : 60%;
+		right : 9px;
+		z-index : 49;
+	}
+		.opdiv{
+			margin-top : 15px;
+		}
+		.opdiv > a{
+			color : white;
+			margin-top : 15px;
+		}
+	#thecal{
+		position : absoulte;
+		top : 0px;
+		left : 50px;
+	}
+		.calClass{
+			text-align : center;
+			width : 129px;
+			position : absolute;
+			border-radius : 10px;
+			/* make it 120 and border radius 15 */
+			font-size : 9px;
+      z-index : 15;
+		}
+      .intclass{
+        background-color : #DDDDDD;
+      }
+      .bookmarkoverlay{
+        color : white;
+        text-align : center;
+        width : 123px;
+        position : absolute;
+        border-radius : 10px;
+        font-size : 12px;
+        z-index : 16;
+        opacity : .7;
+      }
+		.aSquare{
+			width : 129px;
+			height: 59px;
+			border-bottom : 1px solid black;
+			border-right : 1px solid black;
+			float : left;
+			text-align : center;
+		}
+		.hour{
+			background-color : white;
+		}
+		.day{
+			background-color : pink;
+			height: 15px;
+			padding-top : 3px;
+		}
+		.time{
+			width : 45px;
+			position : absolute;
+			text-align : right;
+		}
+    .halfhr{
+      position : absolute;
+      z-index : 10;
+      width : 100%;
+      opacity : .2;
+    }
+#diabox{
+	width : 450px;
+	height : 200px;
+	background-color : white;
+	z-index : 61;
+	position : fixed;
+	top : 100px;
+	left : 50%;
+	margin-left : -225px;
+	border-radius : 10px;
+}
+#overbox{
+	width : 600px;
+	height : 300px;
+	background-color : white;
+	z-index : 61;
+	position : fixed;
+	top : 100px;
+	left : 50%;
+	margin-left : -300px;
+	border-radius : 10px;
+  padding : 3px 15px 15px 15px;
+}
+  #thecreditinfo{
+    text-align : left;
+  }
+  #ifsenior{
+    width : 100%;
+    text-align : center;
+  }
+	.diatext{
+		width : 400px;
+		height : 135px;
+		margin-left : auto;
+		margin-right : auto;
+		margin-top : 10px;
+		font-size : 11pt;
+	}
+  .overtext{
+		width : 600px;
+		height : 225px;
+		margin-left : auto;
+		margin-right : auto;
+		margin-top : 10px;
+		font-size : 10pt;
+	}
+	.diabutton{
+		width : 200px;
+		height : 50px;
+		border : 1px soild black;
+		display : inline;
+		margin : 0px 15px 0px 15px;
+		padding : 20px 25px 20px 25px;
+		border-radius : 10px;
+		font-size : 18px;
+		font-weight : bold;
+		cursor : pointer;
+    color : white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+    
+	}
+		.fir{
+      background-image : -webkit-gradient(linear,left top,left bottom,from(#dd4b39),to(#c53727));
+      background-image: -moz-linear-gradient(top, #dd4b39, #c53727);
+		}
+			.fir:hover{
+				background-image : -webkit-gradient(linear,left top, left bottom,from(#c53727),to(#dd4b39));
+        background-image: -moz-linear-gradient(top, #c53727, #dd4b39);
+			}
+		.sec{
+      background-image : -webkit-gradient(linear,left top, left bottom,from(#3d9400),to(#368200));
+      background-image: -moz-linear-gradient(top, #3d9400, #368200);
+		}
+			.sec:hover{
+				background-image : -webkit-gradient(linear,left top, left bottom,from(#368200),to(#3d9400));
+        background-image: -moz-linear-gradient(top, #368200, #3d9400);
+			}
+.hovertip{
+  background-color : #faf7aa;
+  padding : 5px;
+  border-radius : 5px;
+  font-size : 11px;
+  border : 3px solid #f7e990;
+  position : fixed;
+  z-index : 100;
+  opacity : .96;
+}
+#dholder{
+  width : 100%;
+  position : fixed;
+  bottom : 0px;
+  text-align : center;
+  background-color : pink;
+  padding : 3px;
+}
+  #dholder:hover{
+    cursor : pointer;
+  }
+#undodiv{
+  z-index : 13;
+	width : 155px;
+	height : 17px;
+	position : fixed;
+	top : 0px;
+	right : 115px;
+	padding-top : 3px;
+	background-color : pink;
+	cursor : pointer;
+	color : black;
+	font-weight : bold;
+} 
+  #undodiv:hover{
+    cursor : pointer;
+  }
+.exti{
+  padding : 1px;
+}
+.exti:hover{
+  cursor : pointer;
+}
+#newCC{
+  width : 100%;
+  height : 30px;
+  background-color : yellow;
+}
+  .addCCItem{
+    margin-bottom : 15px;
+  }
+#sld {
+  width: 100%;
+  height: 15px;
+  background-color: #99FFFF;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+  #sld:hover {
+    cursor: pointer;
+  }

@@ -1,0 +1,53 @@
+
+public class Trie {
+	
+	String value;
+	Trie leftChild;
+	Trie rightChild;
+	
+	//my constructor
+	public Trie() {
+		
+		
+	}
+	// method to read my file, splitter
+	//start with an insert method
+	//define what my tree has
+	
+	//create my left and right child
+	//it has a contructor
+	//enum for internal node and leaf
+	// insert(): takes trie and  a string
+	//if - check if trie ==null, trie
+	//else = 1) 2) if leaf, recursively 
+	//
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+	}
+
+}

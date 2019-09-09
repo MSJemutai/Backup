@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Task1 {
+	
+	public void enroll() {
+
+		
+
+	}
+
+	public static void main(String[] args) {
+	
+		System.out.println("Enter course to enroll('Done' to quit)");
+		System.out.println("Courses offered are: Hist 101, MTH 101, Eng 101, CHM 101, and CSC 101");
+		Scanner in = new Scanner(System.in);
+		String course="";
+
+		while(!course.equals("Done")) {
+			course = in.next();	
+		}
+		in.close();
+}
+}

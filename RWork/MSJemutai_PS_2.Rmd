@@ -1,0 +1,268 @@
+---
+title: "MSJemutai_PS_2"
+author: "Mercy Salome Jemutai"
+date: "9/6/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+heights<-c(140,145,143,122)
+```
+
+
+```{r}
+
+is.numeric(heights)
+```
+```{r}
+is.character(heights)
+```
+
+```{r}
+BP<-read.csv("C:\\Users\\jsang\\Downloads\\BP.csv")
+```
+
+```{r}
+attach(BP)
+```
+
+```{r}
+plot(SBP,DBP,main = "BP Data", sub = "Investigating relationship between numerical variables, SBP and DBP",xlab = "SBP", ylab = "DBP", col="Purple", pch=9)
+```
+
+
+##Histograms!
+
+```{r}
+#Histograms give us information about the general 'shape' of our data, ie. is it approximately normally distributed? Does it contain any potential outliers?
+Blowflies<-read.csv("C:\\Users\\jsang\\Downloads\\BLOWFLIES.csv")
+
+```
+
+```{r}
+attach(Blowflies)
+```
+
+```{r}
+names(Blowflies)
+```
+```{r}
+hist(number_emerging, col = "Maroon", main = "Histogram of blowfly emergence",xlab = "number_emerging")
+```
+
+
+#Stem - leaf plots
+
+```{r}
+stem(number_emerging)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+#PROBLEM SET 2, HW 2 - GRAPHICS AND BASIC STATISTICS
+
+
+
+#QN 1 
+# Do the telomeres of parents/caregivers of very sick children also shorten as a result of chronic stress, perhaps, as they spend more time looking after sick children? 
+
+
+
+
+#STEP 1: Dowload the data, read in, and attach
+
+```{r}
+Telomeres<-read.csv("C:\\Users\\jsang\\Downloads\\TELOMERES(1).csv")
+```
+
+
+```{r}
+attach(Telomeres)
+```
+
+
+```{r}
+#check column names in my data frame
+colnames(Telomeres)
+```
+
+#STEP 2: Identify the type of variable, categorical or numerical?
+
+#(Do i need to check colname or the data itself- telomeres????????????????????)
+
+```{r}
+is.numeric(years)
+#The variable, "years" is of numeric type!
+```
+```{r}
+is.numeric(telomere.length)
+#The variable, "telomere" is also of numeric type!
+```
+```{r}
+is.vector(years)
+
+#It is  vector
+```
+```{r}
+is.vector(telomere.length)
+#It is also vector
+```
+
+
+
+```{r}
+is.character(years)
+#Variable "years" not of character type
+```
+```{r}
+is.character(telomere.length)
+#variable, "telomere" is also not of character type!
+```
+
+
+
+
+
+
+```{r}
+#Check type of data
+is.data.frame(Telomeres)
+#True, thus data is a data frame
+```
+
+##For this question, we need a scatterplot to investigate that relationship
+
+
+
+```{r}
+#Plot a scatterplot!
+#x-axis is the years and y-axis is the telomere length
+
+plot(years,telomere.length, main = "Telomeres data", sub = "Investigating relationship between the length of telomeres and time(in years)", xlab = "years", ylab = "telomere.length", col="purple", pch=7)
+# adding a black line of best fit through the scatterplot
+abline(lm(telomere.length~years),col="Black")
+
+# From the look of the line of best fit, we can deduce that telomere length and time are inversely related.
+
+#Therefore, yes,it is likely that the telomeres of parents/caregivers of very sick children  shorten as a result of chronic stress, perhaps, as they spend more time looking after sick children.
+
+
+```
+
+
+#QUESTION 2: Improve the scatterplot you produced from the hippocampus
+
+```{r}
+ hippocampus<-read.csv("C:\\Users\\jsang\\Downloads\\hippocampus_218P.csv")
+```
+
+```{r}
+attach(hippocampus)
+```
+
+```{r}
+names(hippocampus)
+```
+```{r}
+plot(posterior_hippo_vol, months_as_taxi_driver, main = "Hippocampus data", sub = "Relationship between volume of the posterior hippocampus in taxi drivers and months as a taxi diver", xlab = "posterior_hippo_vol", ylab = "months_as_taxi_driver" ,col="red", pch=4)
+
+```
+
+
+
+#QUESTION 3: 
+
+
+#3.1  Create a graph depicting the frequency distribution of the 35 mass measurements. 
+
+
+
+```{r}
+#Read in the data and store in a new vector called mass, usng c() function
+ #measurements of spermatophore mass (in mg) of 35 males:  
+mass<-c(0.047, 0.037, 0.041, 0.045, 0.039, 0.064, 0.064, 0.065, 0.079, 0.070, 0.066, 0.059, 0.075, 0.079, 0.090, 0.069, 0.066, 0.078, 0.066, 0.066, 0.055, 0.046, 0.056, 0.067, 0.075, 0.048, 0.077, 0.081, 0.066, 0.172, 0.080, 0.078, 0.048, 0.096, 0.097)
+
+
+```
+
+
+
+```{r}
+#Use the table() function to build a contingency table of the counts at each combination of factor levels.
+#Now we can see the frequencies for each
+#http://metadatascience.com/2013/07/03/plotting-the-frequency-distribution-using-r/
+table(mass)
+```
+
+
+#WHEN DO WE USE barplot(mass)???????
+
+
+```{r}
+#use barplot() and table() function to plot the graph
+#https://www.datamentor.io/r-programming/bar-plot/
+#add title, color, and label axis
+
+barplot(table(mass), main = "spermatophore mass (in mg) of 35 males", xlab = "spermatophore mass (in mg)", ylab = "count", col="maroon", border ="blue")
+```
+
+
+
+
+
+#3.2 Describe the shape of the frequency distribution. What are its main features? (Hint: are there any outliers?). 
+
+
+```{r}
+#There is one big outlier, spermatophore of 0.066 mg. Its has a very big count number compared to the other masses. 
+#We can also say most of the masses have a frequency of 1
+#The shape is symmetric and bell shaped
+
+```
+
+
+
+##Error in detach(Blowflies) : invalid 'name' argument???????????????
+
+```{r}
+#detach files
+
+
+detach(BP)
+detach(Blowflies)
+detach(hippocampus)
+detach(Telomeres)
+```

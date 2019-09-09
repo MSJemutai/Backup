@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+/*Mercy Salome Jemutai
+ * Lab 1
+ * MW 12:30-1.45PM 
+ * CSC 172
+ */
+public class Anagram {
+
+	//takes two strings as input and decides if those strings are anagrams or not.
+	//An anagram is a word, phrase, or name formed by rearranging the letters of another, 
+	//such as “cinema“, formed from “iceman“.
+
+	
+	
+	
+	public boolean  isAnagram(String x, String y) {
+	///Have to be same length
+		while(x.length()==y.length()) {
+			//check letters if same
+			for(int i=0;i<x.length();i++) {
+				
+			}
+			
+			
+		}
+		return true;
+		
+		
+		
+	}
+	public static void main(String[] args) {
+		//Implement themainmethod which takes two string as input from the user and 
+		//prints whether the strings are anagrams
+		
+		Scanner in = new Scanner(System.in);
+		
+		String m = in.next();
+		String n = in.next();
+		
+		
+		
+in.close();
+	}
+
+}

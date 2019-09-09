@@ -1,0 +1,72 @@
+package emailApp;
+
+public class Email {
+	private String firstName;
+	private String lastName;
+	private String department;
+	private String company;
+	private int mailboxCapacity;
+	private String password;
+	private String alternateEmail;
+	//private String name;
+
+	//if I have to create an instance of object email I need following 4 details
+	public Email(String firstName, String lastName, String department,String company) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.department = department;
+		this.company = "S&SKenya";
+		//this.password = password;
+	}
+	
+	//generate random string for password
+	public String password() {
+
+		return password;
+
+	}
+
+	//set method to change password
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	//set method for mailbox capacity
+	public void setMailBoxCapacity(int mailboxCapacity) {
+		this.mailboxCapacity = mailboxCapacity;
+	}
+
+	//set method to define alternate email address ?????
+	public void setAlternateEmail(String firstName, String lastName, String department, String company) {
+		this.alternateEmail = firstName +"."+lastName+"."+department+"."+company;
+	}
+
+	//get method for name
+	public String getName() {
+
+		return firstName + lastName;	
+	}
+
+	//get method for email????
+	public String getEmail() {
+		return "Your new Email is " + firstName + "." + lastName + "." + department + "."
+				+ company ;
+
+	}
+
+	//get method to display mailboxCapacity
+	public int getMailboxCapacity() {
+
+		return mailboxCapacity;
+
+	}
+
+	public String getAlternateEmail() {
+		return alternateEmail;
+	}
+
+	public void setAlternateEmail(String alternateEmail) {
+		this.alternateEmail = alternateEmail;
+	}
+
+}

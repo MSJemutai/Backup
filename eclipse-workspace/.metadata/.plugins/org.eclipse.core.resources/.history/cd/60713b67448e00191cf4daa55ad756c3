@@ -1,0 +1,81 @@
+package emailApp;
+
+import java.util.Scanner;
+
+public class Email {
+	private String firstName;
+	private String lastName;
+	private String department;
+	private String company;
+	private int mailboxCapacity;
+	private String password;
+	private String alternateEmail;
+	//private String name;
+
+	//if I have to create an instance of object email I need following details
+	public Email(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		
+		
+	}
+	
+	//determine/ask department (sales, development, accounting), leave blank if none
+	private String setDepartment() {
+		System.out.println("What department do you work for?");
+		Scanner in = new Scanner(System.in);
+		department = in.nextLine();
+		if(department.equalsIgnoreCase("sales")||department.equalsIgnoreCase("accounting")||
+				department.equalsIgnoreCase("development"))	
+		    return department;
+		else
+			return null;
+
+		
+	}
+
+	//generate random string for password
+	public String password() {
+
+		return password;
+
+	}
+
+	//set method to change password
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	//set mailbox capacity
+	public void setMailBoxCapacity(int mailboxCapacity) {
+		this.mailboxCapacity = mailboxCapacity;
+	}
+
+	//set alternate email address ?????
+	public void setAlternateEmail(String firstName, String lastName) {
+		this.alternateEmail = firstName +"."+lastName+"."+department+"."+company;
+	}
+
+	//get method for name
+	public String getName() {
+
+		return firstName + lastName;	
+	}
+
+	//get method for email????
+	public String getEmail() {
+		return "Your new Email is " + firstName + "." + lastName + "." + department + "."
+				+ company+".com" ;
+
+	}
+
+	//get method to display mailboxCapacity
+	public int getMailboxCapacity() {
+
+		return mailboxCapacity;
+
+	}
+
+	
+
+}

@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Task1 {
+	
+	public void enroll() {
+
+		
+
+	}
+
+	public static void main(String[] args) {
+	
+		System.out.println("Enter course to enroll('Done' to quit)");
+		System.out.println("Courses offered are: Hist 101, MTH 101, Eng 101, CHM 101, and CSC 101");
+		Scanner in = new Scanner(System.in);
+		String course="";
+		boolean cont = true;
+		int costs=0;
+
+		while(cont) {
+			course = in.nextLine();
+			costs+=600;
+			if(course.equals("Done")) {cont=false;}
+			
+		}
+		in.close();
+		System.out.println(costs +" "+ course);
+}
+}

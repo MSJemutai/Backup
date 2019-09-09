@@ -1,0 +1,12 @@
+package emailApp;
+
+public class EmailApp {
+
+	public static void main(String[] args) {
+		
+		Email newone = new Email("mercy salome", "jemutai", "sales","SS");
+		System.out.println(newone.getEmail());
+
+	}
+
+}

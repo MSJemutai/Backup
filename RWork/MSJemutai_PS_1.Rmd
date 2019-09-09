@@ -1,0 +1,170 @@
+---
+title: "MSJemutai_PS_1"
+author: "Mercy Salome Jemutai"
+date: "9/4/2019"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+
+##PROBLEM SET 1, HW 1
+
+##QUESTION 1 (A)
+
+```{r}
+#Load data from the graduate school at Berkely
+UCBAdmissions
+
+```
+
+
+```{r}
+#confirm the data set is categorical, Table data set
+#We cannot attach (works for lists, data frames, and environments only)
+class(UCBAdmissions)
+```
+
+```{r}
+#Checking dimensions in the data set and how they classified
+#The applicants are classified by gender, admit, and department
+#There data forms a 3-way table!
+
+str(UCBAdmissions)
+```
+
+```{r}
+# how many males versus females are in the set (use margin.table()function)
+#2, is for Gender!
+#https://rstudio-pubs-static.s3.amazonaws.com/308591_6dff566d383946c881cb5b6a735a79fd.html
+margin.table(UCBAdmissions, 2)
+
+
+```
+```{r}
+# how many of them were admitted overall 
+#Admit - 1
+#Also shows those rejected in total
+margin.table(UCBAdmissions, 1)
+```
+
+```{r}
+#how many were admitted to each of the departments
+#Also shows total of those rejected by each department
+margin.table(UCBAdmissions, c(1,3))
+```
+
+```{r}
+
+#Let's find proportion of men admitted in each department vs women
+
+round(prop.table(UCBAdmissions,1),2)
+# There seems to be a balance between number of departments that admitted more male and those that did not. 
+```
+
+```{r}
+#Let's use a frequency table
+ftable(round(prop.table(UCBAdmissions, c(2,3)), 2),
+       row.vars="Dept", col.vars = c("Gender", "Admit"))
+#Only 2 departments seem to have high proportion of men admitted than women
+
+```
+```{r}
+#let's compare proportion of men and women applying to each department against admissions 
+round(prop.table(margin.table(UCBAdmissions,c(2,3)),1),2)
+
+```
+
+```{r}
+#http://users.stat.ufl.edu/~athienit/STA6505/ucbadmissions.pdf
+round(prop.table(margin.table(UCBAdmissions,c(1,3)),2),2)
+#From the two, we can see that women seem to tend to apply to deparments with low admission rates
+```
+##QUESTION 1(B) 
+
+```{r}
+#Mosaic plot for gender against admission
+mosaicplot(~Gender+Admit, data=UCBAdmissions, col=c("Lime Green","Purple"))
+
+#From the plot, among the admitted applicnts, most are male!
+#The plot does not seem to clearly show which gender forms the highest group among those rejected though***
+
+
+```
+
+```{r}
+#Let's plot another mosaic plot 
+#chance of being accepted vs the department?
+mosaicplot(apply(UCBAdmissions, c(3,1), sum),col=c("Yellow","Blue"))
+#Compare with the next plot
+```
+```{r}
+#Let's check gender against admission
+#mosaicplot(apply(Titanic, c(3,2)),col=c("Pink","Gold"))
+mosaicplot(~Dept+Gender, data=UCBAdmissions, col=c("Orange","Red"))
+##From the last 2 plots, we can see that less women apply to departments that admit more peple!
+
+```
+##QUESTION 2
+
+```{r}
+#Download the file, read it into RStudio and plot either the anterior or 
+#Read in the file
+hippocampus<-read.csv("C:\\Users\\jsang\\Downloads\\hippocampus_218P.csv")
+
+```
+
+
+```{r}
+#let's check names of columns
+names(hippocampus)
+```
+
+```{r}
+#attach it so you can call each column by name
+attach(hippocampus)
+```
+
+```{r}
+#Plot the posterior hippocampus column against the months as a taxi diver column in a scatterplot
+
+plot(posterior_hippo_vol,months_as_taxi_driver)
+```
+
+```{r}
+#Detach!!
+detach(hippocampus)
+
+```
+
+
+
