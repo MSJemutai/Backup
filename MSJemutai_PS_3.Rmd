@@ -1,0 +1,187 @@
+---
+title: "MSJemutai_PS_3"
+author: "Mercy Salome Jemutai"
+date: "9/15/2019"
+output: html_document
+---
+
+#https://www.zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/#TOC
+
+##QN 1 : Identify the type of variables in this data set (numeric, categorical) and 
+##Display the most appropriate graph based on variable type using basic graphical functions.
+
+#read in data, and attach 
+
+
+```{r}
+Telomeres<-read.csv("C:\\Users\\mjemutai\\Downloads\\TELOMERES.csv")
+```
+
+```{r}
+attach(Telomeres)
+```
+
+```{r}
+#use the library()command
+
+library(ggplot2)
+
+#using head() and tail commands to  see first 6 and last six rows of the dataframe (if large data set)
+head(Telomeres)
+
+tail(Telomeres)
+
+# On running the above, we can tell that the variables we have, years and telomere.length, are both numerical
+
+
+``` 
+
+#Display using geom_point since we using a scatterplot to check the relationship between the two variables
+
+
+```{r}
+
+#https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf
+#https://www.zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/#add-a-title-ggtitle-or-labs
+#FORMAT:data=data.frame path)+geom_function(mapping=aes(MAPPINGS))
+
+#gplot
+#add color, size, title, background color
+
+#
+ggplot(data = Telomeres)+geom_point(mapping = aes(x = years,y=telomere.length), color="orange",size=4)+ggtitle("Relationship between length of telomere and years")+theme(panel.background = element_rect(fill = 'purple'))
+
+
+
+       
+```
+
+
+```{r}
+
+#smooth to view trend
+ggplot(data = Telomeres)+ geom_smooth(mapping =aes(x=years,y=telomere.length))
+
+
+
+
+
+    
+   #From the trend, overall, as time(years) increase, the length of the telomere decreases!
+
+#it is likely that the telomeres of parents/caregivers of very sick children  shorten as a result of chronic stress, perhaps, as they spend more time looking after sick children
+
+```
+
+
+
+#QN 2:  Improve the scatterplot you produced from the hippocampus.csv dataset in Set 1
+
+#read in data, and attach
+
+
+```{r}
+
+
+hippocampus<-read.csv("C:\\Users\\mjemutai\\Downloads\\hippocampus_218P.csv")
+```
+
+
+
+```{r}
+attach(hippocampus)
+```
+
+
+```{r}
+head(hippocampus)
+
+tail(hippocampus)
+
+#we don't have to check this though!
+```
+```{r}
+#Let's plot using geom_point()
+
+#add title, color, shape, and size of shape
+
+ggplot(data = hippocampus, mapping = aes(x=posterior_hippo_vol, y=months_as_taxi_driver))+geom_point(shape=11, size=3, color="red")+ggtitle("Hippocampus data")+theme(panel.background = element_rect(fill = 'green'))
+                                                                                                  
+                                                                                                
+
+
+
+
+
+```
+
+#QN 3:  Create a graph depicting the frequency distribution of the 35 mass measurements
+
+
+
+
+```{r}
+
+#Input as a vectorusing c() function
+mass<-c(0.047, 0.037, 0.041, 0.045, 0.039, 0.064, 0.064, 0.065, 0.079, 0.070, 0.066,
+0.059, 0.075, 0.079, 0.090, 0.069, 0.066, 0.078, 0.066, 0.066, 0.055, 0.046,
+0.056, 0.067, 0.075, 0.048, 0.077, 0.081, 0.066, 0.172, 0.080, 0.078, 0.048,
+0.096, 0.097)
+
+
+
+
+```
+
+
+
+```{r}
+
+#change the data from vector to a data frame so we can use ggplot2
+
+mass2<-as.data.frame(mass)
+
+```
+
+
+
+
+```{r}
+
+#histograms use *geom_histogram*, boxplots use *geom_boxplot*
+#we can use histograms to represent frequency distribution of numeric data
+
+#
+#ggplot(data = mass2 )+geom_histogram(aes(mass2$mass))
+
+
+ggplot(data = mass2,aes(mass2$mass))+geom_histogram(breaks=seq(0.037,0.172,0.001))
+
+
+
+      
+
+
+```
+
+
+
+#Describe the shape of the frequency distribution. What are its main features? (Hint: are there any outliers?).
+
+
+
+```{r}
+#thi
+
+
+
+```
+
+
+
+```{r}
+detach(Telomeres)
+detach(hippocampus)
+
+```
+
