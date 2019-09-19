@@ -2,8 +2,11 @@
 title: "MSJemutai_PS_3"
 author: "Mercy Salome Jemutai"
 date: "9/15/2019"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
+
 
 #https://www.zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/#TOC
 
@@ -103,9 +106,9 @@ tail(hippocampus)
 ```{r}
 #Let's plot using geom_point()
 
-#add title, color, shape, and size of shape
+#add title, color, shape, background, and size of shape
 
-ggplot(data = hippocampus, mapping = aes(x=posterior_hippo_vol, y=months_as_taxi_driver))+geom_point(shape=11, size=3, color="red")+ggtitle("Hippocampus data")+theme(panel.background = element_rect(fill = 'green'))
+ggplot(data = hippocampus, mapping = aes(x=posterior_hippo_vol, y=months_as_taxi_driver))+geom_point(shape=11, size=3, color="red")+ggtitle("Hippocampus data")+theme(panel.background = element_rect(fill = 'light green'))
                                                                                                   
                                                                                                 
 
@@ -122,7 +125,7 @@ ggplot(data = hippocampus, mapping = aes(x=posterior_hippo_vol, y=months_as_taxi
 
 ```{r}
 
-#Input as a vectorusing c() function
+#Input data as a vector using c() function
 mass<-c(0.047, 0.037, 0.041, 0.045, 0.039, 0.064, 0.064, 0.065, 0.079, 0.070, 0.066,
 0.059, 0.075, 0.079, 0.090, 0.069, 0.066, 0.078, 0.066, 0.066, 0.055, 0.046,
 0.056, 0.067, 0.075, 0.048, 0.077, 0.081, 0.066, 0.172, 0.080, 0.078, 0.048,
@@ -149,13 +152,18 @@ mass2<-as.data.frame(mass)
 ```{r}
 
 #histograms use *geom_histogram*, boxplots use *geom_boxplot*
+
 #we can use histograms to represent frequency distribution of numeric data
 
-#
-#ggplot(data = mass2 )+geom_histogram(aes(mass2$mass))
+#https://www.datacamp.com/community/tutorials/make-histogram-ggplot2
+#ggplot(data = mass2 )+geom_histogram(aes(mass2$mass)) - simple histogram
 
 
-ggplot(data = mass2,aes(mass2$mass))+geom_histogram(breaks=seq(0.037,0.172,0.001))
+ggplot(data = mass2,aes(mass2$mass))+geom_histogram(binwidth = 0.01,col="black",fill="orange") + labs(title="Histogram for mass", x="mass",y="Count")
+                                                    
+                                                    
+  #change width of the histogram bins - the error messsage!                                            
+                                              
 
 
 
@@ -171,8 +179,10 @@ ggplot(data = mass2,aes(mass2$mass))+geom_histogram(breaks=seq(0.037,0.172,0.001
 
 
 ```{r}
-#thi
+#The histogram is somehow bell-shaped although increasing the width of the bins makes it  positively skewed. 
 
+
+#Yes, we have an outlying data near mass = 0.153
 
 
 ```
@@ -184,4 +194,6 @@ detach(Telomeres)
 detach(hippocampus)
 
 ```
+
+
 
